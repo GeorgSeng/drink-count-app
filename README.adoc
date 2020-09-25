@@ -15,7 +15,7 @@ This App is part of my evaluation (Android native with Kotlin vs Android native 
 This Application is designed with the free to use mockup tool https://www.figma.com/[Figma].
 
 
-image:AppMockup.png[]
+image:AppMockup0.png[]
 
 
 === Links
