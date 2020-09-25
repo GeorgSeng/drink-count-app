@@ -6,12 +6,18 @@
 
 This App is part of my evaluation (Android native with Kotlin vs Android native with Xamarin) for the HTL Diploma.
 
-This Application is designed with the free to use tool https://www.figma.com/[Figma].
+=== Links
+* https://www.microsoft.com/design/fluent/#/[Microsoft Fluent Design]
+
+
+== Mockup
+
+This Application is designed with the free to use mockup tool https://www.figma.com/[Figma].
 
 
 image:AppMockup.png[]
 
 
-
-== Links
-* https://www.microsoft.com/design/fluent/#/[Microsoft Fluent Design]
+=== Links
+* https://undraw.co/[unDraw Icon (Refreshing beverage)]
+* https://material.io/resources/icons/?style=baseline[Material Design Icons]
