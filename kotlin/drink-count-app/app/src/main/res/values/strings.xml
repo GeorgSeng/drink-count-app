@@ -10,4 +10,18 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="btn_new">New</string>
+    <string name="coffee">Coffee</string>
+    <string name="water">Water</string>
+    <string name="empty">0</string>
+    <string name="imagedrink">ImageDrink</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="add_coffee_to_count">Add coffee to count</string>
+    <string name="remove_a_coffee_form_count">remove a coffee form count</string>
+    <string name="remove_a_water_from_count">remove a water from count</string>
+    <string name="add_a_water_to_count">Add a water to count</string>
+    <string name="mainfragment">MainFragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
