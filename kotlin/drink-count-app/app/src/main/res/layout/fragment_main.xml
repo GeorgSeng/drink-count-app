@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.main">
 
+    <data>
+        <variable
+            android:name="viewModel"
+            android:type="com.example.drinkcountapp.ui.main.MainViewModel"/>
+    </data>
+
     <TextView
         android:id="@+id/tv_Water"
         android:layout_width="0dp"
@@ -23,7 +29,7 @@
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="@string/empty"
+        android:text="@{() -> viewModel.WaterCount}"
         app:layout_constraintBottom_toBottomOf="@+id/btni_water_rm3"
         app:layout_constraintEnd_toStartOf="@+id/btni_water_rm3"
         app:layout_constraintTop_toTopOf="@+id/btni_water_rm3" />
@@ -48,6 +54,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/remove_a_water_from_count"
+        android:onClick="@{() -> viewModel.onRmWater()}"
         android:src="@drawable/ic_remove_24px"
         app:layout_constraintEnd_toStartOf="@+id/btni_water_add3"
         app:layout_constraintTop_toBottomOf="@+id/btni_coffee_rm" />
@@ -59,6 +66,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/add_a_water_to_count"
+        android:onClick="@{() -> viewModel.onAddWater()}"
         android:src="@drawable/ic_add_24px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btni_coffee_add" />
@@ -114,7 +122,7 @@
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="@string/empty"
+        android:text="@{() -> viewModel.CoffeeCount}"
         app:layout_constraintBottom_toBottomOf="@+id/btni_coffee_rm"
         app:layout_constraintEnd_toStartOf="@+id/btni_coffee_rm"
         app:layout_constraintTop_toTopOf="@+id/btni_coffee_rm" />
@@ -126,6 +134,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/remove_a_coffee_form_count"
+        android:onClick="@{() -> viewModel.onRmCoffee()}"
         android:src="@drawable/ic_remove_24px"
         app:layout_constraintEnd_toStartOf="@+id/btni_coffee_add"
         app:layout_constraintTop_toBottomOf="@+id/btn_new" />
@@ -137,6 +146,7 @@
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:contentDescription="@string/add_coffee_to_count"
+        android:onClick="@{() -> viewModel.onAddCoffee()}"
         android:src="@drawable/ic_add_24px"
         app:layout_constraintBottom_toBottomOf="@+id/btni_coffee_rm"
         app:layout_constraintEnd_toEndOf="parent"
