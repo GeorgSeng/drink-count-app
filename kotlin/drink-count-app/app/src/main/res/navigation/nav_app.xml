@@ -2,12 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
     app:startDestination="@id/nav_main">
 
     <fragment
         android:id="@+id/nav_main"
-        android:name="com.example.drinkcountapp.ui.main.main"
+        android:name="com.example.drinkcountapp.StartFragment"
         android:label="main_fragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_start" />
+    <fragment
+        android:id="@+id/drinkHistoryFragment"
+        android:name="com.example.drinkcountapp.DrinkHistoryFragment"
+        android:label="fragment_drink_list"
+        tools:layout="@layout/fragment_drink_list" />
 </navigation>

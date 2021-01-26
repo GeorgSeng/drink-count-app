@@ -1,4 +1,4 @@
-package com.example.drinkcountapp.ui.drinkhistory
+package com.example.drinkcountapp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.drinkcountapp.R
 import com.example.drinkcountapp.dummy.DummyContent
+import com.example.drinkcountapp.viewmodels.MyDrinkHistoryRecyclerViewAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A fragment representing a list of Items.
  */
+@AndroidEntryPoint
 class DrinkHistoryFragment : Fragment() {
 
     private var columnCount = 1

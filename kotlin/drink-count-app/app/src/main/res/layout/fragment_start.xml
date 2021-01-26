@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.drinkcountapp.viewmodels.StartViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.drinkcountapp.MainActivity">
+
+        <TextView
+            android:id="@+id/tv_Water"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/water"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_water_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_water_count"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_water_count" />
+
+        <TextView
+            android:id="@+id/tv_water_count"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btni_water_rm"
+            app:layout_constraintEnd_toStartOf="@+id/btni_water_rm"
+            app:layout_constraintTop_toTopOf="@+id/btni_water_rm" />
+
+        <ImageView
+            android:id="@+id/iv_drinkImage"
+            android:layout_width="382dp"
+            android:layout_height="302dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/imagedrink"
+            android:src="@drawable/ic_undraw_refreshing_beverage_td3r"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btni_water_rm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/remove_a_water_from_count"
+            android:onClick="@{() -> viewModel.onRmWater()}"
+            android:src="@drawable/ic_remove_24px"
+            app:layout_constraintEnd_toStartOf="@+id/btni_water_add"
+            app:layout_constraintTop_toBottomOf="@+id/btni_coffee_rm" />
+
+        <ImageButton
+            android:id="@+id/btni_water_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/add_a_water_to_count"
+            android:onClick="@{() -> viewModel.onAddWater()}"
+            android:src="@drawable/ic_add_24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btni_coffee_add" />
+
+        <Button
+            android:id="@+id/btn_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btn_new"
+            android:onClick="@{() -> viewModel.onNewEntry()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_drinkImage" />
+
+        <TextView
+            android:id="@+id/tv_coffee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/coffee"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_coffee_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_coffee_count"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> viewModel.onSubmit()}"
+            android:text="@string/btn_submit"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
+            app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{()->viewModel.onCancel()}"
+            android:text="@string/btn_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_submit"
+            app:layout_constraintTop_toBottomOf="@+id/btni_water_rm" />
+
+        <TextView
+            android:id="@+id/tv_coffee_count"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btni_coffee_rm"
+            app:layout_constraintEnd_toStartOf="@+id/btni_coffee_rm"
+            app:layout_constraintTop_toTopOf="@+id/btni_coffee_rm" />
+
+        <ImageButton
+            android:id="@+id/btni_coffee_rm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/remove_a_coffee_form_count"
+            android:onClick="@{() -> viewModel.onRmCoffee()}"
+            android:src="@drawable/ic_remove_24px"
+            app:layout_constraintEnd_toStartOf="@+id/btni_coffee_add"
+            app:layout_constraintTop_toBottomOf="@+id/btn_new" />
+
+        <ImageButton
+            android:id="@+id/btni_coffee_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/add_coffee_to_count"
+            android:onClick="@{() -> viewModel.onAddCoffee()}"
+            android:src="@drawable/ic_add_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/btni_coffee_rm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btni_coffee_rm" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

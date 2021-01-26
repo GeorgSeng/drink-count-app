@@ -1,27 +1,17 @@
 <resources>
     <string name="app_name">drink-count-app</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="btn_new">New</string>
     <string name="coffee">Coffee</string>
     <string name="water">Water</string>
-    <string name="empty">0</string>
     <string name="imagedrink">ImageDrink</string>
-    <string name="btn_submit">SUBMIT</string>
-    <string name="btn_cancel">CANCEL</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_cancel">Cancel</string>
     <string name="add_coffee_to_count">Add coffee to count</string>
     <string name="remove_a_coffee_form_count">remove a coffee form count</string>
     <string name="remove_a_water_from_count">remove a water from count</string>
     <string name="add_a_water_to_count">Add a water to count</string>
-    <string name="mainfragment">MainFragment</string>
+    <string name="mainfragment">Main Page</string>
+    <string name="drinkfragment">Drink History</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

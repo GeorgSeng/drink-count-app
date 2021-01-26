@@ -1,4 +1,4 @@
-package com.example.drinkcountapp.ui.drinkhistory
+package com.example.drinkcountapp.viewmodels
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
