@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.util.*
 
-class StartViewModel @AssistedInject constructor(
+class StartViewModel constructor(
     private val repository: StartRepository) :
     ViewModel() {
     // TODO: Implement the ViewModel
@@ -96,21 +96,4 @@ class StartViewModel @AssistedInject constructor(
 
     private fun toDrink(value: String) = enumValueOf<DrinkType>(value)
     private fun fromDrink(value: DrinkType) = value.name
-
-
-    @AssistedInject.Factory
-    interface AssistedFactory {
-        fun create(): StartViewModel
-    }
-
-    companion object {
-        fun provideFactory(
-            assistedFactory: AssistedFactory
-        ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-            @Suppress("UNCHECKED_CAST")
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return assistedFactory.create() as T
-            }
-        }
-    }
 }

@@ -13,5 +13,7 @@
     <string name="add_a_water_to_count">Add a water to count</string>
     <string name="mainfragment">Main Page</string>
     <string name="drinkfragment">Drink History</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
