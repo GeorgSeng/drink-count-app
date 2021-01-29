@@ -20,13 +20,13 @@
         </Grid.Resources>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0" Source="{local:ImageResource Drink_Count.images.undraw_refreshing_beverage_td3r.png}" Margin="100,40,100,40"></Image>
+        <Image Grid.Row="0" Source="{local:ImageResource Drink_Count.images.undraw_refreshing_beverage_td3r.png}" Margin="40,40,40,40"></Image>
 
         <Button Text="New"
                 Grid.Row="1"
@@ -50,12 +50,12 @@
                 <Label Text="Coffee" FontSize="Title" Grid.Column="0" Grid.Row="0"/>
                 <Label Text="{Binding CoffeeCount}" FontSize="Title" Grid.Column="1" Grid.Row="0"/>
                 <Stepper Value="{Binding CoffeeCount}"
-                             Maximum="100" Grid.Column="2" Grid.Row="0"/>
+                             Grid.Column="2" Grid.Row="0"/>
 
                 <Label Text="Water" FontSize="Title" Grid.Column="0" Grid.Row="1"/>
                 <Label Text="{Binding WaterCount}" FontSize="Title" Grid.Column="1" Grid.Row="1"/>
                 <Stepper Value="{Binding WaterCount}"
-                             Maximum="100" Grid.Column="2" Grid.Row="1"/>
+                            Grid.Column="2" Grid.Row="1"/>
             </Grid>
         </Grid>
 

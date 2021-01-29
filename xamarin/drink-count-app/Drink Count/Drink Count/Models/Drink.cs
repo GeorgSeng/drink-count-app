@@ -10,7 +10,11 @@ namespace Drink_Count.Models
         public DateTime Time { get; set; }
         public int Amount { get; set; }
         public DrinksEnum DrinkType { get; set; }
+        //[Ignore]
+        //public string DrinkAndAmount { get { return $"{DrinkType}: {Amount} Cups"; } }
         [Ignore]
-        public string DrinkAndAmount { get { return $"{DrinkType}: {Amount} Cups"; } }
+        public string DrinkFromattetForList { 
+            get {
+                return $"{Time.ToShortDateString()} {Time.ToShortTimeString()}    {DrinkType}: {Amount} Cups"; } }
     }
 }

@@ -18,14 +18,14 @@
 
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Vertical">
+                <TextCell Text="{Binding DrinkFromattetForList}" TextColor="Black">
+                    <!--<StackLayout Orientation="Vertical">
                         <Label Text="{Binding Time}"/>
-                        <!--Style="{DynamicResource ListItemTextStyle}"-->
+                        --><!--Style="{DynamicResource ListItemTextStyle}"--><!--
                         <Label Text="{Binding DrinkAndAmount}"/>
-                        <!--Style="{DynamicResource ListItemDetailTextStyle}"-->
-                    </StackLayout>
-                </ViewCell>
+                        --><!--Style="{DynamicResource ListItemDetailTextStyle}"--><!--
+                    </StackLayout>-->
+                </TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>
 
