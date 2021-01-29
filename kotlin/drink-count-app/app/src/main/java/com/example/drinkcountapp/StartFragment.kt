@@ -36,8 +36,8 @@ class StartFragment : Fragment() {
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
 
-        val repo = AppDatabase.getInstance(this.requireContext()).drinkDao()
-        this.viewModelFactory = StartViewModelFactory(repository = StartRepository(repo))
+        val database = AppDatabase.getInstance(this.requireContext()).drinkDao()
+        this.viewModelFactory = StartViewModelFactory(repository = StartRepository(database))
         this.viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(StartViewModel::class.java)
 

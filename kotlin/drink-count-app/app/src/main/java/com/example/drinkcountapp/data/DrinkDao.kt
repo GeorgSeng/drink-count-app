@@ -10,5 +10,5 @@ interface DrinkDao {
     suspend fun insert(entity: Drink)
 
     @Query("select * from drink")
-    fun getAll(): List<Drink>
+    suspend fun getAll(): List<Drink>
 }

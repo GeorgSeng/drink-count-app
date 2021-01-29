@@ -8,9 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.drinkcountapp.data.AppDatabase
+import com.example.drinkcountapp.data.Drink
+import com.example.drinkcountapp.data.DrinkHistoryRepository
 import com.example.drinkcountapp.dummy.DummyContent
 import com.example.drinkcountapp.viewmodels.MyDrinkHistoryRecyclerViewAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 /**
  * A fragment representing a list of Items.
@@ -34,6 +40,16 @@ class DrinkHistoryFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_drink_list, container, false)
 
+        val database = AppDatabase.getInstance(this.requireContext()).drinkDao()
+        var repo = DrinkHistoryRepository(database)
+
+        //var items = repo.getAll()
+
+        var items: List<Drink>
+        runBlocking {
+            items = repo.getAll()
+        }
+
         // Set the adapter
         if (view is RecyclerView) {
             with(view) {
@@ -41,7 +57,7 @@ class DrinkHistoryFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyDrinkHistoryRecyclerViewAdapter(DummyContent.ITEMS)
+                adapter = MyDrinkHistoryRecyclerViewAdapter(items)
             }
         }
         return view
