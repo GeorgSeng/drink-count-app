@@ -25,6 +25,9 @@ import kotlinx.coroutines.runBlocking
 class DrinkHistoryFragment : Fragment() {
 
     private var columnCount = 1
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var protocolAdapter: RecyclerView.Adapter<MyDrinkHistoryRecyclerViewAdapter.ViewHolder>
+    private lateinit var protocolManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,14 +54,30 @@ class DrinkHistoryFragment : Fragment() {
         }
 
         // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = MyDrinkHistoryRecyclerViewAdapter(items)
-            }
+//        if (view is RecyclerView) {
+//            with(view) {
+//                layoutManager = when {
+//                    columnCount <= 1 -> LinearLayoutManager(context)
+//                    else -> GridLayoutManager(context, columnCount)
+//                }
+//                adapter = MyDrinkHistoryRecyclerViewAdapter(items)
+//            }
+//        }
+        protocolManager = GridLayoutManager(view.context,1)
+
+        protocolAdapter = MyDrinkHistoryRecyclerViewAdapter(items)
+
+        recyclerView = view.findViewById<RecyclerView>(R.id.drinksList).apply {
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            //setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = protocolManager
+
+            // specify an viewAdapter (see also next example)
+            adapter = protocolAdapter
+
         }
         return view
     }
