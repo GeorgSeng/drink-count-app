@@ -16,6 +16,13 @@
         android:layout_height="match_parent"
         tools:context="com.example.drinkcountapp.MainActivity">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_top_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08"/>
+
         <TextView
             android:id="@+id/tv_Water"
             android:layout_width="0dp"
@@ -41,17 +48,20 @@
 
         <ImageView
             android:id="@+id/iv_drinkImage"
-            android:layout_width="382dp"
-            android:layout_height="302dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:contentDescription="@string/imagedrink"
             android:src="@drawable/ic_undraw_refreshing_beverage_td3r"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_new"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintTop_toTopOf="@+id/guideline_top_bar"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageButton
             android:id="@+id/btni_water_rm"
@@ -82,14 +92,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:onClick="@{() -> viewModel.onNewEntry()}"
             android:text="@string/btn_new"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_drinkImage" />
+            app:layout_constraintTop_toTopOf="@+id/guideline_top_bar"
+            app:layout_constraintVertical_bias="0.68" />
 
         <TextView
             android:id="@+id/tv_coffee"
