@@ -23,6 +23,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/water"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_water_count"
             app:layout_constraintEnd_toStartOf="@+id/tv_water_count"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +34,7 @@
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/btni_water_rm"
             app:layout_constraintEnd_toStartOf="@+id/btni_water_rm"
             app:layout_constraintTop_toTopOf="@+id/btni_water_rm" />
@@ -82,8 +84,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/btn_new"
             android:onClick="@{() -> viewModel.onNewEntry()}"
+            android:text="@string/btn_new"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_drinkImage" />
@@ -95,6 +98,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/coffee"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_coffee_count"
             app:layout_constraintEnd_toStartOf="@+id/tv_coffee_count"
             app:layout_constraintStart_toStartOf="parent" />
@@ -107,6 +111,7 @@
             android:layout_marginEnd="8dp"
             android:onClick="@{() -> viewModel.onSubmit()}"
             android:text="@string/btn_submit"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
             app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
             app:layout_constraintStart_toStartOf="parent" />
@@ -120,6 +125,7 @@
             android:layout_marginEnd="8dp"
             android:onClick="@{()->viewModel.onCancel()}"
             android:text="@string/btn_cancel"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_submit"
             app:layout_constraintTop_toBottomOf="@+id/btni_water_rm" />
@@ -129,6 +135,7 @@
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/btni_coffee_rm"
             app:layout_constraintEnd_toStartOf="@+id/btni_coffee_rm"
             app:layout_constraintTop_toTopOf="@+id/btni_coffee_rm" />

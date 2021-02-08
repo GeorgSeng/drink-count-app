@@ -31,6 +31,7 @@ class StartViewModel constructor(
 
     init {
         resetFields()
+        _isNewEntry.value = false
     }
 
     fun onNewEntry() {

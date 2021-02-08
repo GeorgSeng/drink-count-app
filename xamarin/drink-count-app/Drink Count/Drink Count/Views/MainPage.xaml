@@ -26,20 +26,21 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0" Source="{local:ImageResource Drink_Count.images.undraw_refreshing_beverage_td3r.png}" Margin="40,40,40,40"></Image>
+        <Image Grid.Row="0" Source="{local:ImageResource Drink_Count.Assets.Images.undraw_refreshing_beverage_td3r.png}" Margin="10,10,10,10"></Image>
 
-        <Button Text="New"
-                Grid.Row="1"
-                Command="{Binding NewCommand}"
-                HorizontalOptions="Start" />
-
-        <Grid Grid.Row="2" IsEnabled="{Binding IsEditing}" BackgroundColor="NavajoWhite">
+        <Grid Grid.Row="1">
+            <Button Text="New"
+                    Grid.Column="0"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding NewCommand}"/>
+        </Grid>
+        
+        <Grid Grid.Row="2" IsEnabled="{Binding IsEditing}">
             <Grid BindingContext="{Binding DrinkEdit}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="Auto"/>
-                    <!--<ColumnDefinition Width="Auto"/>-->
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -47,27 +48,42 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Label Text="Coffee" FontSize="Title" Grid.Column="0" Grid.Row="0"/>
-                <Label Text="{Binding CoffeeCount}" FontSize="Title" Grid.Column="1" Grid.Row="0"/>
+                <Label Text="Coffee" 
+                       FontSize="Large" 
+                       Grid.Column="0" Grid.Row="0"/>
+                <Label Text="{Binding CoffeeCount}" 
+                       FontSize="Large" 
+                       HorizontalOptions="End"
+                       Grid.Column="1" Grid.Row="0"/>
                 <Stepper Value="{Binding CoffeeCount}"
+                         HorizontalOptions="End"
                              Grid.Column="2" Grid.Row="0"/>
 
-                <Label Text="Water" FontSize="Title" Grid.Column="0" Grid.Row="1"/>
-                <Label Text="{Binding WaterCount}" FontSize="Title" Grid.Column="1" Grid.Row="1"/>
+                <Label Text="Water" 
+                       FontSize="Large" 
+                       Grid.Column="0" Grid.Row="1"/>
+                <Label Text="{Binding WaterCount}" 
+                       FontSize="Large" 
+                       HorizontalOptions="End"
+                       Grid.Column="1" Grid.Row="1"/>
                 <Stepper Value="{Binding WaterCount}"
-                            Grid.Column="2" Grid.Row="1"/>
+                         HorizontalOptions="End"
+                         Grid.Column="2" Grid.Row="1"/>
             </Grid>
         </Grid>
 
         <Grid Grid.Row="3">
-            <Button Text="Cancel"
+            <Button Text="Submit"
                     Grid.Column="0"
-                    Command="{Binding CancelCommand}"
-                    VerticalOptions="CenterAndExpand" />
-            <Button Grid.Column="1"
-                Text="Submit"
-                    Command="{Binding SubmitCommand}"
-                    VerticalOptions="CenterAndExpand" />
+                    Margin="4,4,4,4"
+                    VerticalOptions="CenterAndExpand" 
+                    Command="{Binding SubmitCommand}"/>
+            <Button Text="Cancel"
+                    Grid.Column="1"
+                    Margin="4,4,4,4"
+                    VerticalOptions="CenterAndExpand"
+                    Command="{Binding CancelCommand}"/>
+            
         </Grid>
     </Grid>
 </ContentPage>

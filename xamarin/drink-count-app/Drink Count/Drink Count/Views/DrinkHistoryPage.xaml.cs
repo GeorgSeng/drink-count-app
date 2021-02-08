@@ -26,15 +26,15 @@ namespace Drink_Count.Views
             MyListView.ItemsSource = (await App.Database.GetItemsAsync()).OrderByDescending(i=>i.Time);
         }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
+        //async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        //{
+        //    if (e.Item == null)
+        //        return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+        //    await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
 
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
-        }
+        //    //Deselect Item
+        //    ((ListView)sender).SelectedItem = null;
+        //}
     }
 }

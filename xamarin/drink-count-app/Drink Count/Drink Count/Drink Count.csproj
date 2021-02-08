@@ -6,13 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\undraw_refreshing_beverage_td3r.png" />
-    <None Remove="images\undraw_refreshing_beverage_td3r.svg" />
+    <None Remove="Assets\Images\undraw_refreshing_beverage_td3r.png" />
+    <None Remove="Assets\Images\undraw_refreshing_beverage_td3r.svg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="images\undraw_refreshing_beverage_td3r.png" />
-    <EmbeddedResource Include="images\undraw_refreshing_beverage_td3r.svg" />
+    <EmbeddedResource Include="Assets\Images\undraw_refreshing_beverage_td3r.png" />
+    <EmbeddedResource Include="Assets\Images\undraw_refreshing_beverage_td3r.svg" />
   </ItemGroup>
 
   <ItemGroup>

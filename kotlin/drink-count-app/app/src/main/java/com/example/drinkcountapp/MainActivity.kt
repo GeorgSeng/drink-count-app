@@ -1,6 +1,7 @@
 package com.example.drinkcountapp
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.work.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -52,4 +53,12 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner=this
     }
 
+
+    // Item in navigation drawer selected
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

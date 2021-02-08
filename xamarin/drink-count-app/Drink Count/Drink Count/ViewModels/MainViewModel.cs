@@ -93,7 +93,7 @@ namespace Drink_Count.ViewModels
                 drinks.Add(new Drink
                 {
                     Time = DateTime.Now,
-                    DrinkType = DrinksEnum.coffee,
+                    DrinkType = DrinksEnum.COFFEE,
                     Amount = viewModel.CoffeeCount
                 });
             }
@@ -103,7 +103,7 @@ namespace Drink_Count.ViewModels
                 drinks.Add(new Drink
                 {
                     Time = DateTime.Now,
-                    DrinkType = DrinksEnum.water,
+                    DrinkType = DrinksEnum.WATER,
                     Amount = viewModel.WaterCount
                 });
             }

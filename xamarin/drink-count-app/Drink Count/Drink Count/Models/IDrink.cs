@@ -12,7 +12,7 @@ namespace Drink_Count.Models
 
     public enum DrinksEnum
     {
-        water,
-        coffee,
+        WATER,
+        COFFEE,
     }
 }

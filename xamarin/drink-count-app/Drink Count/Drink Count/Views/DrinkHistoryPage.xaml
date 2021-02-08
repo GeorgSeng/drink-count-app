@@ -3,29 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Drink_Count.Views.DrinkHistoryPage"
              Title="DrinkHistory">
+    
+    <!--<ContentPage.Resources>
+        <StyleSheetExtension Source="/Assets/styles.css"></StyleSheetExtension>
+    </ContentPage.Resources>-->
+    
     <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
-        <!--Built in Cells-->
-        <!--<ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>-->
-
-        <!--Custom View Cells-->
 
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding DrinkFromattetForList}" TextColor="Black">
-                    <!--<StackLayout Orientation="Vertical">
-                        <Label Text="{Binding Time}"/>
-                        --><!--Style="{DynamicResource ListItemTextStyle}"--><!--
-                        <Label Text="{Binding DrinkAndAmount}"/>
-                        --><!--Style="{DynamicResource ListItemDetailTextStyle}"--><!--
-                    </StackLayout>-->
-                </TextCell>
+                <ViewCell>
+                    <Label Text="{Binding DrinkFromattetForList}" FontSize="Medium" TextColor="Black" VerticalOptions="Center" Margin="10"></Label>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
 

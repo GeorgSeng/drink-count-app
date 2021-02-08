@@ -42,30 +42,42 @@ class StartFragment : Fragment() {
             .get(StartViewModel::class.java)
 
         binding.viewModel = viewModel
+        //viewModel.onCancel()
+
+        //binding.btnCancel.isEnabled = false
 
         viewModel.isNewEntry.observe(viewLifecycleOwner, {
-            binding.btnNew.isClickable = !it
-            binding.btnCancel.isClickable = it
-            binding.btnSubmit.isClickable = it
+            binding.btnNew.isEnabled = !it
+            binding.btnCancel.isEnabled = it
+            //binding.btnSubmit.isEnabled = it
 
-            binding.btniCoffeeAdd.isClickable = it
-            binding.btniCoffeeRm.isClickable = it
-            binding.btniWaterAdd.isClickable = it
-            binding.btniWaterRm.isClickable = it
+            binding.btniCoffeeAdd.isEnabled = it
+            binding.btniCoffeeRm.isEnabled = it
+            binding.btniWaterAdd.isEnabled = it
+            binding.btniWaterRm.isEnabled = it
         })
 
         // subscribe for changes of the count field im viewmodel
         viewModel.coffeeCount.observe(viewLifecycleOwner, {
             binding.tvCoffeeCount.text = it.toString()
-            binding.btniCoffeeRm.isClickable = (it > 0)
+            binding.btniCoffeeRm.isEnabled = (it > 0)
+            binding.btnSubmit.isEnabled = changeSubmitEnabledStatus()
         })
 
         viewModel.waterCount.observe(viewLifecycleOwner, {
             binding.tvWaterCount.text = it.toString()
-            binding.btniWaterRm.isClickable = (it > 0)
+            binding.btniWaterRm.isEnabled = (it > 0)
+            binding.btnSubmit.isEnabled = changeSubmitEnabledStatus()
         })
 
         return binding.root
+    }
+
+    fun changeSubmitEnabledStatus(): Boolean {
+        if (viewModel.coffeeCount.value!! > 0 || viewModel.waterCount.value!! > 0){
+            return true
+        }
+        return false
     }
 
 }
