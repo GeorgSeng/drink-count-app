@@ -2,6 +2,7 @@ package com.example.drinkcountapp
 
 //import androidx.databinding.DataBindingUtil
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,7 @@ class StartFragment : Fragment() {
     ): View {
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
+        Log.d("StartFragment", "Hello World!")
 
         val database = AppDatabase.getInstance(this.requireContext()).drinkDao()
         this.viewModelFactory = StartViewModelFactory(repository = StartRepository(database))

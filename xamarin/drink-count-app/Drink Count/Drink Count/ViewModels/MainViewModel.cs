@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
@@ -40,6 +41,9 @@ namespace Drink_Count.ViewModels
 
         public MainViewModel()
         {
+
+            Console.WriteLine("MainViewModel says Hello World! ");
+
             #region Commands
             NewCommand = new Command(
                 execute: () =>
